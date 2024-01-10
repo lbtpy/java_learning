@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-               /* int foot;
+        /* int foot;
         int inch;
         Scanner sg = new Scanner(System.in);
         foot =sg.nextInt();
@@ -177,7 +177,8 @@ public class Main {
         }
 
        */
-        Scanner in = new Scanner(System.in);
+
+        /*  Scanner in = new Scanner(System.in);
         int x = in.nextInt();
         int[] data = {3,5,2,7,8,9,11,24,10,35};
         boolean found = false;
@@ -197,5 +198,35 @@ public class Main {
         {
             System.out.println(x+"不在其中");
         }
+        */
+
+        //十进制转换为十六进制
+        System.out.print("请输入一个十进制数");
+        Scanner in = new Scanner(System.in);
+        int number = in.nextInt();
+        System.out.println("十六进制为"+dec2Hex(number));
+
+        }
+        //整数处理
+        private static String dec2Hex(int number){
+            if( number< 16 ){
+                return getHexFormat(number);
+            }
+            else{
+                return dec2Hex(number/16)+getHexFormat(number%16);
+            }
+        }
+        //余数处理
+        private static String getHexFormat(int n){
+            if( n>9 && n<16){
+                return (char)(n-10+'A')+"";
+            }
+            if( n>=0){
+                return n+"";
+            }
+            else{
+                return "无效数据";
+            }
+
     }
 }
